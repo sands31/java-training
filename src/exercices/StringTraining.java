@@ -119,13 +119,8 @@ public class StringTraining {
      * @return the number of character occurrences in string, eg: 2
      */
     public static int occurrences(String string, char search) {
-    	int count = 0;
-    	for (int charNum : string.toCharArray()) {
-    		if (string.charAt(charNum) == search)
-    			count++;
-    	}
 
-        return count;
+        return string.length() - string.replace(Character.toString(search), "").length();
     }
 
     /**
@@ -135,13 +130,8 @@ public class StringTraining {
      * @return the string where searched characters are replaced, eg: "wesw"
      */
     public static String replaceChar(String string, char search, char replace) {
-    	char[] charArray = string.toCharArray();
-    	for (int charNum : charArray) {
-    		if (charArray[charNum] == search)
-    			charArray[charNum] = replace;
-    	}
 
-        return String.valueOf(charArray);
+        return string.replace(Character.toString(search), Character.toString(replace));
     }
 
     /**
